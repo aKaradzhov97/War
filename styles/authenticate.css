@@ -1,0 +1,79 @@
+.authenticate-section {
+    max-width: 35rem;
+    margin: 0 auto;
+}
+
+.authenticate {
+    padding: 1rem 0;
+    background-image: radial-gradient(circle, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.8) 100%), url("../images/bg_dark.jpg");
+    margin-top: 1.5rem;
+    border: 8px dashed orange;
+}
+
+.authenticate .authenticate-form {
+    width: 17.5rem;
+    margin: 0 auto;
+}
+
+.label {
+    margin: 1rem;
+    position: relative;
+}
+
+.label i {
+    position: absolute;
+    top: 1.285rem;
+    left: 1.285rem;
+}
+
+.label input {
+    font-size: 1.2rem;
+    width: 100%;
+    background: #666;
+    color: whitesmoke;
+}
+
+
+.label .inputField {
+    padding: 1rem 1rem 1rem 3.25rem;
+    border: 1px solid whitesmoke;
+    outline: none;
+    color: white;
+}
+
+.label i {
+    color: whitesmoke;
+}
+
+.label .inputField:focus,
+.label .inputField:focus + i {
+    color: #333;
+}
+
+.label .inputField:focus {
+    background-color: white;
+}
+
+.label input[type="submit"],
+.label input[type="button"] {
+    padding: 1rem;
+    border: 2px solid white;
+    outline: none;
+}
+
+.label input[type="button"],
+.label input[type="submit"] {
+    background-color: whitesmoke;
+    color: #333;
+}
+
+.label input[type="button"]:hover,
+.label input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: white;
+    transition: 0.125s linear;
+}
+
+.label a {
+    text-decoration: none;
+}

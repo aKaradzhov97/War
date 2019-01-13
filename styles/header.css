@@ -1,0 +1,16 @@
+header {
+    text-align: center;
+}
+
+.title {
+    margin-top: 2rem;
+    font-family: 'Cinzel', serif;
+    color: white;
+    font-size: 5rem;
+    text-shadow: 1px 0 15px rgba(0, 0, 50, 1);
+}
+
+.desc {
+    color: #fff;
+    font-size: 1.6rem;
+}

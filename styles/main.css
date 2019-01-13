@@ -1,0 +1,145 @@
+@import "./range-bars.css";
+
+.main-section {
+    margin: 0;
+    display: flex;
+}
+
+.buildings {
+    background: #585C4D;
+    color: #fff;
+    flex: 4;
+}
+
+.building {
+    display: flex;
+    margin: 1rem;
+    border: 1px solid #C8B990;
+    background-color: #695d4f;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg fill='%235a5045' fill-opacity='0.5'%3E%3Cpolygon fill-rule='evenodd' points='8 4 12 6 8 8 6 12 4 8 0 6 4 4 6 0 8 4'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.buildings {
+    padding: 1rem;
+}
+
+.buildings a {
+    font-weight: bold;
+    text-decoration: none;
+    border: 2px solid orange;
+    margin: 0 1rem;
+    padding: 0 2rem;
+    color: whitesmoke;
+}
+
+.building-image {
+    margin: 0.5rem;
+    position: relative;
+    overflow: hidden;
+    width: 15rem;
+}
+
+.building-image:after {
+    display: block;
+    content: '';
+    padding-top: 56.25%;
+}
+
+.building .building-image img {
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: auto;
+}
+.building-info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.building-upper-info .building-title {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.building-upper-info,
+.building-bottom-info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem 15px 2rem;
+}
+
+.building-build-btn {
+    padding: 0.25rem 2rem;
+    font-weight: bold;
+    font-size: 1rem;
+    background-color: #444;
+    color: #fff;
+    outline: none;
+    border: 1px solid #111;
+}
+
+.building-build-btn:hover {
+    background-color: whitesmoke;
+    color: #444;
+    cursor: pointer;
+}
+
+/* SIDE NAVIGATIONS */
+
+.left-nav,
+.right-nav {
+    flex: 1;
+    background: #444;
+    margin: 0 1rem;
+}
+
+.left-nav ul,
+.right-nav ul {
+    margin: 0;
+}
+
+.left-nav li,
+.right-nav li {
+    list-style: none;
+}
+
+.left-nav ul {
+
+}
+
+.left-nav ul li {
+    padding: 0.25rem 0.5rem;
+}
+
+.left-nav ul li a,
+.right-nav ul li i {
+    color: #fff;
+}
+
+.left-nav ul li a {
+    text-decoration: none;
+    display: block;
+    border: 1px solid #C8B990;
+    padding: 0.25rem 0.5rem;
+    font-weight: bold;
+}
+
+.left-nav ul li a:hover {
+    color: orange;
+}
+
+/* RIGHT ASIDE BAR */
+.resource-icon {
+    padding: 0.25rem;
+    text-align: center;
+}
+.resource-icon i {
+    width: 0.85rem;
+
+}
