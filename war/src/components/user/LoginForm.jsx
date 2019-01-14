@@ -4,7 +4,6 @@ import notificator from '../../utils/notificator';
 
 export default class LoginForm extends Component {
 
-
     render = () => {
         return (
             <main>

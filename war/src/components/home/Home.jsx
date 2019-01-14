@@ -4,6 +4,14 @@ import notificator from "../../utils/notificator";
 import requester from "../../utils/requester";
 
 import oreMineImg from "../../images/mine.png";
+import oilImg from "../../images/oil.jpg"
+import house from "../../images/houses.jpg"
+import greenElectric from "../../images/green-el.jpg"
+import hydroPower from "../../images/water-plant.jpg"
+import infrastructure from "../../images/infra.jpg"
+import oreStorage from "../../images/ore-strorage.jpg"
+import oilStorage from "../../images/Oil-storage.jpg"
+
 
 export default class Home extends Component {
     constructor(props) {
@@ -102,9 +110,11 @@ export default class Home extends Component {
                     </nav>
                 </aside>
                 <section className="buildings">
-                    <a href="#">Civil</a>
-                    <a href="#">Military</a>
-                    <a href="#">Hi - Tech</a>
+                    <section className="buildings-type-list">
+                        <a href="#">Civil</a>
+                        <a href="#">Military</a>
+                        <a href="#">Hi - Tech</a>
+                    </section>
                     <article className="building">
                         <div className="building-image">
                             <img src={oreMineImg} alt=""/>
@@ -136,7 +146,7 @@ export default class Home extends Component {
                     </article>
                     <article className="building">
                         <div className="building-image">
-                            <img src="../../images/oil.jpg" alt=""/>
+                            <img src={oilImg} alt=""/>
                         </div>
                         <div className="building-info">
                             <div className="building-upper-info">
@@ -165,7 +175,7 @@ export default class Home extends Component {
                     </article>
                     <article className="building">
                         <div className="building-image">
-                            <img src="../../images/houses.jpg" alt=""/>
+                            <img src={house} alt=""/>
                         </div>
                         <div className="building-info">
                             <div className="building-upper-info">
@@ -194,7 +204,7 @@ export default class Home extends Component {
                     </article>
                     <article className="building">
                         <div className="building-image">
-                            <img src="../../images/green-el.jpg" alt=""/>
+                            <img src={greenElectric} alt=""/>
                         </div>
                         <div className="building-info">
                             <div className="building-upper-info">
@@ -223,7 +233,7 @@ export default class Home extends Component {
                     </article>
                     <article className="building">
                         <div className="building-image">
-                            <img src="../../images/water-plant.jpg" alt=""/>
+                            <img src={hydroPower} alt=""/>
                         </div>
                         <div className="building-info">
                             <div className="building-upper-info">
@@ -252,7 +262,7 @@ export default class Home extends Component {
                     </article>
                     <article className="building">
                         <div className="building-image">
-                            <img src="../../images/infra.jpg" alt=""/>
+                            <img src={infrastructure} alt=""/>
                         </div>
                         <div className="building-info">
                             <div className="building-upper-info">
@@ -281,36 +291,7 @@ export default class Home extends Component {
                     </article>
                     <article className="building">
                         <div className="building-image">
-                            <img src="../../images/army.jpg" alt=""/>
-                        </div>
-                        <div className="building-info">
-                            <div className="building-upper-info">
-                                <span className="building-title">Army [1]</span>
-                                <div className="building-build-time">
-                                    <i className="far fa-clock" title="Time required"></i>
-                                    <span>00:16:00</span>
-                                </div>
-                            </div>
-                            <div className="building-bottom-info">
-                                <div className="building-ore-required">
-                                    <i className="fas fa-shopping-cart" title="Ore required"></i>
-                                    <span>1200</span>
-                                </div>
-                                <div className="building-area-required">
-                                    <span>20</span>
-                                    <i className="fab fa-buromobelexperte" title="Area required"></i>
-                                </div>
-                                <div className="building-electronics-required">
-                                    <span>0</span>
-                                    <i className="fas fa-microchip" title="Electronics required"></i>
-                                </div>
-                                <button className="building-build-btn">Build</button>
-                            </div>
-                        </div>
-                    </article>
-                    <article className="building">
-                        <div className="building-image">
-                            <img src="../../images/ore-strorage.jpg" alt=""/>
+                            <img src={oreStorage} alt=""/>
                         </div>
                         <div className="building-info">
                             <div className="building-upper-info">
@@ -339,7 +320,7 @@ export default class Home extends Component {
                     </article>
                     <article className="building">
                         <div className="building-image">
-                            <img src="../../images/Oil-storage.jpg" alt=""/>
+                            <img src={oilStorage} alt=""/>
                         </div>
                         <div className="building-info">
                             <div className="building-upper-info">

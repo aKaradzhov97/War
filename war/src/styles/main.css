@@ -27,14 +27,14 @@
     font-weight: bold;
     text-decoration: none;
     margin: 0 1rem;
-    padding: 0.2rem 2rem;
+    padding: 0 1rem;
     border: 2px solid whitesmoke;
     color: whitesmoke;
 }
 
 .buildings .buildings-type-list {
     position: absolute;
-    top: 9.55rem;
+    top: 13.44rem;
 }
 
 .building-image {
@@ -77,6 +77,10 @@
     display: flex;
     justify-content: space-between;
     padding: 1rem 2rem 15px 2rem;
+}
+
+.building-bottom-info i {
+    margin: 0 0.35rem;
 }
 
 .building-build-btn {
