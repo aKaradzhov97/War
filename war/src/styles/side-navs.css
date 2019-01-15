@@ -1,0 +1,84 @@
+@import "./range-bars.css";
+
+/* SIDE NAVIGATIONS */
+
+.left-nav,
+.right-nav {
+    flex: 2;
+    background: #383838;
+    margin: 0 1rem;
+}
+
+.left-nav ul,
+.right-nav ul {
+    margin: 0;
+}
+
+.left-nav li,
+.right-nav li {
+    list-style: none;
+}
+
+.left-nav ul {
+    margin-top: 0.5rem;
+}
+
+.left-nav ul li {
+    padding: 0.25rem 1rem;
+}
+
+.left-nav ul li a,
+.right-nav ul li i {
+    color: #fff;
+}
+
+.left-nav ul li a {
+    text-decoration: none;
+    display: block;
+    border: 1px solid #C8B990;
+    padding: 0.25rem 0.5rem;
+    font-weight: bold;
+}
+
+.left-nav ul li a:hover {
+    color: orange;
+}
+
+/* RIGHT ASIDE BAR */
+.resource-icon {
+    padding: 0.25rem;
+    text-align: center;
+}
+.resource-icon i {
+    width: 0.85rem;
+    font-size: 1.05rem;
+}
+
+.right-nav span {
+    color: whitesmoke;
+    padding: 0 0.5rem;
+}
+
+.right-nav nav {
+    margin: 1rem;
+}
+
+/* USER PANEL */
+.user-panel-right {
+    display: flex;
+    justify-content: space-between;
+}
+
+.user-panel-right a {
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #C8B990;
+    margin: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    font-weight: bold;
+}
+
+.user-panel-right a:hover {
+    color: orange;
+    transform: scale(1.01);
+}

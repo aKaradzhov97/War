@@ -79,6 +79,10 @@ export default class Home extends Component {
         return false;
     };
 
+    redirectTo = () => {
+        this.props.history.push("/");
+    };
+
     render = () => {
         const loggedInSection = (
             <section className="main-section">
@@ -86,34 +90,34 @@ export default class Home extends Component {
                     <nav>
                         <ul>
                             <li>
-                                <a href="#">Buildings</a>
+                                <Link to="/buildings/civil">Buildings</Link>
                             </li>
                             <li>
-                                <a href="#">Technologies</a>
+                                <Link to="#">Technologies</Link>
                             </li>
                             <li>
-                                <a href="#">Hire</a>
+                                <Link to="#">Hire</Link>
                             </li>
                             <li>
-                                <a href="#">Units</a>
+                                <Link to="#">Units</Link>
                             </li>
                             <li>
-                                <a href="#">Command center</a>
+                                <Link to="#">Command center</Link>
                             </li>
                             <li>
-                                <a href="#">Trade</a>
+                                <Link to="#">Trade</Link>
                             </li>
                             <li>
-                                <a href="#">Map</a>
+                                <Link to="#">Map</Link>
                             </li>
                         </ul>
                     </nav>
                 </aside>
                 <section className="buildings">
                     <section className="buildings-type-list">
-                        <a href="#">Civil</a>
-                        <a href="#">Military</a>
-                        <a href="#">Hi - Tech</a>
+                        <Link to="/buildings/civil">Civil</Link>
+                        <Link to="#">Military</Link>
+                        <Link to="#">Hi - Tech</Link>
                     </section>
                     <article className="building">
                         <div className="building-image">
@@ -310,7 +314,7 @@ export default class Home extends Component {
                                     <span>5</span>
                                     <i className="fab fa-buromobelexperte" title="Area required"></i>
                                 </div>
-                                <div class="building-electronics-required">
+                                <div className="building-electronics-required">
                                     <span>0</span>
                                     <i className="fas fa-microchip" title="Electronics required"></i>
                                 </div>
@@ -339,7 +343,7 @@ export default class Home extends Component {
                                     <span>8</span>
                                     <i className="fab fa-buromobelexperte" title="Area required"></i>
                                 </div>
-                                <div class="building-electronics-required">
+                                <div className="building-electronics-required">
                                     <span>0</span>
                                     <i className="fas fa-microchip" title="Electronics required"></i>
                                 </div>
@@ -349,7 +353,22 @@ export default class Home extends Component {
                     </article>
                 </section>
                 <aside className="right-nav">
-                    <nav>
+                    <section className="user-panel-right">
+                        <Link to="#">{sessionStorage.getItem("username")}</Link>
+                        <Link to="/logout">Logout</Link>
+                    </section>
+                    <nav className="nav-electricity">
+                        <ul>
+                            <li>
+                                <span className="resource-icon" title="Electricity">
+                                    <i class="fas fa-bolt"></i>
+                                </span>
+                                <span>450 / 500</span>
+                                <input type="range" min="0" max="500" value="450" disabled/>
+                            </li>
+                        </ul>
+                    </nav>
+                    <nav className="nav-production">
                         <ul>
                             <li>
                         <span className="resource-icon">
@@ -362,43 +381,47 @@ export default class Home extends Component {
                         <span className="resource-icon">
                             <i className="fas fa-tint" title="Petrol"></i>
                         </span>
-                                <span>50 / 100 + 450/h</span>
+                                <span>50 / 100 + 10/h</span>
                                 <input type="range" min="0" max="100" value="50" disabled/>
                             </li>
                             <li>
                         <span className="resource-icon">
                             <i className="fas fa-microchip" title="Eletronics"></i>
                         </span>
-                                <span>80 / 100 + 80/h</span>
-                                <input type="range" min="0" max="100" value="80" disabled/>
+                                <span>0 / 100 + 0/h</span>
+                                <input type="range" min="0" max="100" value="0" disabled/>
                             </li>
                             <li>
                         <span className="resource-icon">
                             <i className="fas fa-coins" title="Money"></i>
                         </span>
-                                <span>100 / 100 + 120/h</span>
+                                <span>100 / 100 + 0/h</span>
                                 <input type="range" min="0" max="100" value="100" disabled/>
                             </li>
+                        </ul>
+                    </nav>
+                    <nav className="nav-stats">
+                        <ul>
                             <li>
                         <span className="resource-icon">
                             <i className="fas fa-shield-alt" title="Defense"></i>
                         </span>
-                                <span>50 / 100 + 880/h</span>
-                                <input type="range" min="0" max="100" value="50" disabled/>
+                                <span>10000 / 10000</span>
+                                <input type="range" min="0" max="10000" value="10000" disabled/>
                             </li>
                             <li>
                         <span className="resource-icon">
                             <i className="fab fa-buromobelexperte" title="Area"></i>
                         </span>
-                                <span>50 / 100 + 50/h</span>
-                                <input type="range" min="0" max="100" value="50" disabled/>
+                                <span>550 / 3000</span>
+                                <input type="range" min="0" max="3000" value="550" disabled/>
                             </li>
                             <li>
                         <span className="resource-icon">
                             <i className="fas fa-users" title="Population"></i>
                         </span>
-                                <span>50 / 100 + 140/h</span>
-                                <input type="range" min="0" max="100" value="50" disabled/>
+                                <span>150K / 200K + 1100/h</span>
+                                <input type="range" min="0" max="200000" value="150000" disabled/>
                             </li>
                         </ul>
                     </nav>
@@ -406,34 +429,9 @@ export default class Home extends Component {
             </section>
         );
 
-        const anonymousSection = (
-            <section className="authenticate-section">
-                <section className="authenticate">
-                    <form onSubmit={this.handleSubmit} className="authenticate-form">
-                        <div className="label">
-                            <input type="text" onChange={this.handleChange} value={this.state.username} name="username" id="username" placeholder="Username" className="inputField"/>
-                            <i className="fas fa-user"></i>
-                        </div>
-                        <div className="label">
-                            <input type="password" onChange={this.handleChange} value={this.state.password} name="password" id="password" placeholder="Password" className="inputField"/>
-                            <i className="fas fa-key"></i>
-                        </div>
-                        <div className="label">
-                            <input type="submit" value="Login!"/>
-                        </div>
-                        <div className="label">
-                            <Link to="/register">
-                                <input type="button" value="Go to register!"/>
-                            </Link>
-                        </div>
-                    </form>
-                </section>
-            </section>
-        );
-
         return (
             <main>
-                {this.isLogged() ? loggedInSection : anonymousSection}
+                {this.isLogged() ? loggedInSection : this.redirectTo()}
             </main>
         )
     }

@@ -1,5 +1,3 @@
-@import "./range-bars.css";
-
 .main-section {
     margin: 0;
     display: flex;
@@ -8,7 +6,7 @@
 .buildings {
     background: #39363a;
     color: #fff;
-    flex: 4;
+    flex: 6;
 }
 
 .building {
@@ -23,18 +21,26 @@
     padding: 1rem;
 }
 
+.buildings .buildings-type-list {
+    margin: 0 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .buildings .buildings-type-list a {
     font-weight: bold;
     text-decoration: none;
-    margin: 0 1rem;
+    margin: 0 0.5rem;
     padding: 0 1rem;
     border: 2px solid whitesmoke;
     color: whitesmoke;
+    transition: 0.05s ease-in-out;
 }
 
-.buildings .buildings-type-list {
-    position: absolute;
-    top: 13.44rem;
+.buildings .buildings-type-list a:hover {
+    background: whitesmoke;
+    color: #444;
 }
 
 .building-image {
@@ -58,6 +64,7 @@
     left: 0;
     height: auto;
 }
+
 .building-info {
     width: 100%;
     display: flex;
@@ -104,61 +111,3 @@
     cursor: pointer;
 }
 
-/* SIDE NAVIGATIONS */
-
-.left-nav,
-.right-nav {
-    flex: 1;
-    background: #383838;
-    margin: 0 1rem;
-}
-
-.left-nav ul,
-.right-nav ul {
-    margin: 0;
-}
-
-.left-nav li,
-.right-nav li {
-    list-style: none;
-}
-
-.left-nav ul {
-
-}
-
-.left-nav ul li {
-    padding: 0.25rem 0.5rem;
-}
-
-.left-nav ul li a,
-.right-nav ul li i {
-    color: #fff;
-}
-
-.left-nav ul li a {
-    text-decoration: none;
-    display: block;
-    border: 1px solid #C8B990;
-    padding: 0.25rem 0.5rem;
-    font-weight: bold;
-}
-
-.left-nav ul li a:hover {
-    color: orange;
-}
-
-/* RIGHT ASIDE BAR */
-.resource-icon {
-    padding: 0.25rem;
-    text-align: center;
-}
-.resource-icon i {
-    width: 0.85rem;
-    font-size: 1.05rem;
-}
-
-.right-nav span {
-    color: whitesmoke;
-    padding: 0 0.75rem;
-}

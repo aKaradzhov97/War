@@ -9,12 +9,15 @@ import { Route, Switch } from 'react-router-dom';
 import Home from './home/Home';
 import Register from './user/RegisterForm';
 import Login from './user/LoginForm';
+import Logout from "./user/Logout";
 
 //Route with no path - used for not found pages.
 const AppRouter = () => (
     <Switch>
+        <Route path="/buildings/civil" component={Home}/>
+        <Route path="/logout" component={Logout}/>
         <Route path="/register" component={Register}/>
-        <Route path="/" component={Home}/>
+        <Route path="/" component={Login}/>
     </Switch>
 );
 
