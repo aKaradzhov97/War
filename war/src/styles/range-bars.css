@@ -4,7 +4,7 @@ input[type="range"] {
     position: relative;
     overflow: hidden;
     height: 0.75rem;
-    width: 13rem;
+    width: 100%;
     cursor: pointer;
     border-radius: 0; /* iOS */
 }

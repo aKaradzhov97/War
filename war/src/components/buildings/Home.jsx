@@ -3,11 +3,6 @@ import { Link } from 'react-router-dom';
 import notificator from "../../utils/notificator";
 import requester from "../../utils/requester";
 
-//Components import
-import AsideLeft from "../common/AsideLeft";
-import AsideRight from "../common/AsideRight";
-
-//Images import
 import oreMineImg from "../../images/mine.png";
 import oilImg from "../../images/oil.jpg"
 import house from "../../images/houses.jpg"
@@ -16,8 +11,7 @@ import hydroPower from "../../images/water-plant.jpg"
 import infrastructure from "../../images/infra.jpg"
 import oreStorage from "../../images/ore-strorage.jpg"
 import oilStorage from "../../images/Oil-storage.jpg"
-import cart from "../../images/cart.png";
-import coal from "../../images/coal.svg";
+
 
 export default class Home extends Component {
     constructor(props) {
@@ -92,7 +86,33 @@ export default class Home extends Component {
     render = () => {
         const loggedInSection = (
             <section className="main-section">
-                <AsideLeft/>
+                <aside className="left-nav">
+                    <nav>
+                        <ul>
+                            <li>
+                                <Link to="/buildings/civil">Buildings</Link>
+                            </li>
+                            <li>
+                                <Link to="#">Technologies</Link>
+                            </li>
+                            <li>
+                                <Link to="#">Hire</Link>
+                            </li>
+                            <li>
+                                <Link to="#">Units</Link>
+                            </li>
+                            <li>
+                                <Link to="#">Command center</Link>
+                            </li>
+                            <li>
+                                <Link to="#">Trade</Link>
+                            </li>
+                            <li>
+                                <Link to="#">Map</Link>
+                            </li>
+                        </ul>
+                    </nav>
+                </aside>
                 <section className="buildings">
                     <section className="buildings-type-list">
                         <Link to="/buildings/civil">Civil</Link>
@@ -105,7 +125,7 @@ export default class Home extends Component {
                         </div>
                         <div className="building-info">
                             <div className="building-upper-info">
-                                <span className="building-title">Ore mine [ 1 ]</span>
+                                <span className="building-title">Ore mine [1]</span>
                                 <div className="building-build-time">
                                     <i className="far fa-clock" title="Time required"></i>
                                     <span>00:01:30</span>
@@ -134,7 +154,7 @@ export default class Home extends Component {
                         </div>
                         <div className="building-info">
                             <div className="building-upper-info">
-                                <span className="building-title">Oil field [ 1 ]</span>
+                                <span className="building-title">Oil field [1]</span>
                                 <div className="building-build-time">
                                     <i className="far fa-clock" title="Time required"></i>
                                     <span>00:03:00</span>
@@ -163,7 +183,7 @@ export default class Home extends Component {
                         </div>
                         <div className="building-info">
                             <div className="building-upper-info">
-                                <span className="building-title">Houses [ 1 ]</span>
+                                <span className="building-title">Houses [1]</span>
                                 <div className="building-build-time">
                                     <i className="far fa-clock" title="Time required"></i>
                                     <span>00:07:00</span>
@@ -192,7 +212,7 @@ export default class Home extends Component {
                         </div>
                         <div className="building-info">
                             <div className="building-upper-info">
-                                <span className="building-title">Air Power Plant [ 1 ]</span>
+                                <span className="building-title">Air Power Plant [1]</span>
                                 <div className="building-build-time">
                                     <i className="far fa-clock" title="Time required"></i>
                                     <span>07:30:00</span>
@@ -221,7 +241,7 @@ export default class Home extends Component {
                         </div>
                         <div className="building-info">
                             <div className="building-upper-info">
-                                <span className="building-title">Hydro Power Plant [ 1 ]</span>
+                                <span className="building-title">Hydro Power Plant [1]</span>
                                 <div className="building-build-time">
                                     <i className="far fa-clock" title="Time required"></i>
                                     <span>00:16:00</span>
@@ -250,7 +270,7 @@ export default class Home extends Component {
                         </div>
                         <div className="building-info">
                             <div className="building-upper-info">
-                                <span className="building-title">Infrastructure [ 1 ]</span>
+                                <span className="building-title">Infrastructure [1]</span>
                                 <div className="building-build-time">
                                     <i className="far fa-clock" title="Time required"></i>
                                     <span>02:15:00</span>
@@ -279,7 +299,7 @@ export default class Home extends Component {
                         </div>
                         <div className="building-info">
                             <div className="building-upper-info">
-                                <span className="building-title">Ore Warehouse [ 1 ]</span>
+                                <span className="building-title">Ore Warehouse [1]</span>
                                 <div className="building-build-time">
                                     <i className="far fa-clock" title="Time required"></i>
                                     <span>00:27:00</span>
@@ -308,10 +328,10 @@ export default class Home extends Component {
                         </div>
                         <div className="building-info">
                             <div className="building-upper-info">
-                                <span className="building-title">Oil Warehouse [ 1 ]</span>
+                                <span className="building-title">Oil Warehouse [1]</span>
                                 <div className="building-build-time">
                                     <i className="far fa-clock" title="Time required"></i>
-                                    <span> 00:32:00</span>
+                                    <span>00:32:00</span>
                                 </div>
                             </div>
                             <div className="building-bottom-info">
@@ -332,7 +352,80 @@ export default class Home extends Component {
                         </div>
                     </article>
                 </section>
-                <AsideRight/>
+                <aside className="right-nav">
+                    <section className="user-panel-right">
+                        <Link to="#">{sessionStorage.getItem("username")}</Link>
+                        <Link to="/logout">Logout</Link>
+                    </section>
+                    <nav className="nav-electricity">
+                        <ul>
+                            <li>
+                                <span className="resource-icon" title="Electricity">
+                                    <i className="fas fa-bolt"></i>
+                                </span>
+                                <span>450 / 500</span>
+                                <input type="range" min="0" max="500" value="450" disabled/>
+                            </li>
+                        </ul>
+                    </nav>
+                    <nav className="nav-production">
+                        <ul>
+                            <li>
+                        <span className="resource-icon">
+                            <i className="fas fa-shopping-cart" title="Ore"></i>
+                        </span>
+                                <span>30 / 100 + 50/h</span>
+                                <input type="range" min="0" max="100" value="30" disabled/>
+                            </li>
+                            <li>
+                        <span className="resource-icon">
+                            <i className="fas fa-tint" title="Petrol"></i>
+                        </span>
+                                <span>50 / 100 + 10/h</span>
+                                <input type="range" min="0" max="100" value="50" disabled/>
+                            </li>
+                            <li>
+                        <span className="resource-icon">
+                            <i className="fas fa-microchip" title="Eletronics"></i>
+                        </span>
+                                <span>0 / 100 + 0/h</span>
+                                <input type="range" min="0" max="100" value="0" disabled/>
+                            </li>
+                            <li>
+                        <span className="resource-icon">
+                            <i className="fas fa-coins" title="Money"></i>
+                        </span>
+                                <span>100 / 100 + 0/h</span>
+                                <input type="range" min="0" max="100" value="100" disabled/>
+                            </li>
+                        </ul>
+                    </nav>
+                    <nav className="nav-stats">
+                        <ul>
+                            <li>
+                        <span className="resource-icon">
+                            <i className="fas fa-shield-alt" title="Defense"></i>
+                        </span>
+                                <span>10000 / 10000</span>
+                                <input type="range" min="0" max="10000" value="10000" disabled/>
+                            </li>
+                            <li>
+                        <span className="resource-icon">
+                            <i className="fab fa-buromobelexperte" title="Area"></i>
+                        </span>
+                                <span>550 / 3000</span>
+                                <input type="range" min="0" max="3000" value="550" disabled/>
+                            </li>
+                            <li>
+                        <span className="resource-icon">
+                            <i className="fas fa-users" title="Population"></i>
+                        </span>
+                                <span>150K / 200K + 1100/h</span>
+                                <input type="range" min="0" max="200000" value="150000" disabled/>
+                            </li>
+                        </ul>
+                    </nav>
+                </aside>
             </section>
         );
 

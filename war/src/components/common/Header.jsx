@@ -19,7 +19,7 @@ export default class Header extends Component {
     render = () => {
         return (
             <header>
-                <p className="title">WAR</p>
+                <p className="title">W<i className="fas fa-fighter-jet"></i>R</p>
                 <p className="desc">Everything starts here...</p>
             </header>
         )

@@ -42,6 +42,8 @@
 
 .left-nav ul li a:hover {
     color: orange;
+    background: #333;
+    border-color: orange;
 }
 
 /* RIGHT ASIDE BAR */
@@ -63,6 +65,11 @@
     margin: 1rem;
 }
 
+.right-nav nav:not(:last-child) {
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #444444;
+}
+
 /* USER PANEL */
 .user-panel-right {
     display: flex;
@@ -80,5 +87,7 @@
 
 .user-panel-right a:hover {
     color: orange;
+    background: #333;
+    border-color: orange;
     transform: scale(1.01);
 }

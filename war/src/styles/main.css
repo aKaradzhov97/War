@@ -1,3 +1,5 @@
+@import url("https://file.myfontastic.com/c5irk2xp7QZdrJAJNGTtoK/icons.css");
+
 .main-section {
     margin: 0;
     display: flex;
@@ -35,7 +37,7 @@
     padding: 0 1rem;
     border: 2px solid whitesmoke;
     color: whitesmoke;
-    transition: 0.05s ease-in-out;
+    transition: 0.075s ease;
 }
 
 .buildings .buildings-type-list a:hover {
@@ -86,6 +88,7 @@
     padding: 1rem 2rem 15px 2rem;
 }
 
+.building-upper-info i,
 .building-bottom-info i {
     margin: 0 0.35rem;
 }
@@ -101,8 +104,8 @@
     transition: 0.075s ease-in;
 }
 
-.ore-required-img {
-    width: 1.2rem;
+.ore-cart-img {
+    width: 3rem;
 }
 
 .building-build-btn:hover {
