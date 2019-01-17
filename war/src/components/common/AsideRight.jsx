@@ -2,11 +2,18 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 export default class AsideRight extends Component {
+    isLogged = () => {
+        if (sessionStorage.getItem('username') && sessionStorage.getItem('authtoken')) {
+            return true;
+        }
+        return false;
+    };
+
     render = () => {
         return (
             <aside className="right-nav">
                 <section className="user-panel-right">
-                    <Link to="#">{sessionStorage.getItem("username")}</Link>
+                    <Link to="#">{this.isLogged() ? sessionStorage.getItem("username") : null}</Link>
                     <Link to="/logout">Logout</Link>
                 </section>
                 <nav className="nav-electricity">
@@ -24,7 +31,7 @@ export default class AsideRight extends Component {
                     <ul>
                         <li>
                         <span className="resource-icon">
-                            <i className="fas fa-shopping-cart" title="Ore"></i>
+                            <i className="icon-my-icons" title="Ore"></i>
                         </span>
                             <span>30 / 100 + 50/h</span>
                             <input type="range" min="0" max="100" value="30" disabled/>

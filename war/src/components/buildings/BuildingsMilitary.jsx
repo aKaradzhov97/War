@@ -1,83 +1,19 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import notificator from "../../utils/notificator";
-import requester from "../../utils/requester";
 
 //Components import
 import AsideLeft from "../common/AsideLeft";
 import AsideRight from "../common/AsideRight";
 
 //Images import
-import oreMineImg from "../../images/mine.png";
-import oilImg from "../../images/oil.jpg"
-import house from "../../images/houses.jpg"
-import greenElectric from "../../images/green-el.jpg"
-import hydroPower from "../../images/water-plant.jpg"
-import infrastructure from "../../images/infra.jpg"
-import oreStorage from "../../images/ore-strorage.jpg"
-import oilStorage from "../../images/Oil-storage.jpg"
-import cart from "../../images/cart.png";
-import coal from "../../images/coal.svg";
+import commandCenter from "../../images/buildings-mil/command-center.png";
+import barracks from "../../images/buildings-mil/barracks.jpg";
+import vehiclePlant from "../../images/buildings-mil/vehicle-plant.jpg";
+import aircraftPlant from "../../images/buildings-mil/aircraft-plant.jpg";
+import bunkers from "../../images/buildings-mil/bunkers.jpg";
+import minefield from "../../images/buildings-mil/minefield.jpg";
 
-export default class Home extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            username: '',
-            password: ''
-        }
-    }
-
-    handleChange = (event) => {
-        let fieldName = event.target.name;
-        let fieldValue = event.target.value;
-
-        this.setState({
-            [fieldName]: fieldValue
-        });
-    };
-
-    handleSubmit = (event) => {
-        event.preventDefault();
-
-        //Validate here.
-
-        if (this.state.username.length < 4) {
-            notificator.showError('Username must be at least 4 symbols!');
-            return;
-        } else if (this.state.password.length < 5) {
-            notificator.showError('Password must be at least 5 symbols!');
-            return;
-        }
-
-        requester.post('user', 'login', 'basic', this.state)
-            .then(res => {
-                sessionStorage.setItem('username', res.username);
-                sessionStorage.setItem('authtoken', res._kmd.authtoken);
-                sessionStorage.setItem('userId', res._id);
-                if (res._kmd.roles !== undefined) {
-                    sessionStorage.setItem('roleId', res._kmd.roles[0].roleId);
-                }
-                notificator.showInfo('Successfully logged in!');
-
-                this.props.history.push('/');
-
-            }).catch((res) => {
-            if (res.responseJSON.description === 'Invalid credentials. Please retry your request with correct credentials.') {
-                notificator.showError('Invalid username and / or password! Please try again!');
-            }
-
-            this.setState({ username: '', password: '' });
-        });
-        //Notifications & validation remaining
-        //Clear input fields.
-        this.setState({
-            username: '',
-            password: ''
-        })
-    };
-
+export default class BuildingsMilitary extends Component {
     isLogged = () => {
         if (sessionStorage.getItem('username') && sessionStorage.getItem('authtoken')) {
             return true;
@@ -96,25 +32,25 @@ export default class Home extends Component {
                 <section className="buildings">
                     <section className="buildings-type-list">
                         <Link to="/buildings/civil">Civil</Link>
-                        <Link to="#">Military</Link>
+                        <Link to="/buildings/military">Military</Link>
                         <Link to="#">Hi - Tech</Link>
                     </section>
                     <article className="building">
                         <div className="building-image">
-                            <img src={oreMineImg} alt=""/>
+                            <img src={commandCenter} alt=""/>
                         </div>
                         <div className="building-info">
                             <div className="building-upper-info">
-                                <span className="building-title">Ore mine [ 1 ]</span>
+                                <span className="building-title">Command center [ 1 ]</span>
                                 <div className="building-build-time">
                                     <i className="far fa-clock" title="Time required"></i>
-                                    <span>00:01:30</span>
+                                    <span>00:10:00</span>
                                 </div>
                             </div>
                             <div className="building-bottom-info">
                                 <div className="building-ore-required">
-                                    <i className="fas fa-shopping-cart" title="Ore required"></i>
-                                    <span>100</span>
+                                    <i className="icon-my-icons" title="Ore required"></i>
+                                    <span>1500</span>
                                 </div>
                                 <div className="building-area-required">
                                     <span>15</span>
@@ -130,20 +66,20 @@ export default class Home extends Component {
                     </article>
                     <article className="building">
                         <div className="building-image">
-                            <img src={oilImg} alt=""/>
+                            <img src={barracks} alt=""/>
                         </div>
                         <div className="building-info">
                             <div className="building-upper-info">
-                                <span className="building-title">Oil field [ 1 ]</span>
+                                <span className="building-title">Barracks [ 1 ]</span>
                                 <div className="building-build-time">
                                     <i className="far fa-clock" title="Time required"></i>
-                                    <span>00:03:00</span>
+                                    <span>00:05:30</span>
                                 </div>
                             </div>
                             <div className="building-bottom-info">
                                 <div className="building-ore-required">
-                                    <i className="fas fa-shopping-cart" title="Ore required"></i>
-                                    <span>200</span>
+                                    <i className="icon-my-icons" title="Ore required"></i>
+                                    <span>1000</span>
                                 </div>
                                 <div className="building-area-required">
                                     <span>15</span>
@@ -159,11 +95,11 @@ export default class Home extends Component {
                     </article>
                     <article className="building">
                         <div className="building-image">
-                            <img src={house} alt=""/>
+                            <img src={vehiclePlant} alt=""/>
                         </div>
                         <div className="building-info">
                             <div className="building-upper-info">
-                                <span className="building-title">Houses [ 1 ]</span>
+                                <span className="building-title">Vehicle plant [ 1 ]</span>
                                 <div className="building-build-time">
                                     <i className="far fa-clock" title="Time required"></i>
                                     <span>00:07:00</span>
@@ -171,8 +107,8 @@ export default class Home extends Component {
                             </div>
                             <div className="building-bottom-info">
                                 <div className="building-ore-required">
-                                    <i className="fas fa-shopping-cart" title="Ore required"></i>
-                                    <span>450</span>
+                                    <i className="icon-my-icons" title="Ore required"></i>
+                                    <span>5000</span>
                                 </div>
                                 <div className="building-area-required">
                                     <span>10</span>
@@ -188,23 +124,23 @@ export default class Home extends Component {
                     </article>
                     <article className="building">
                         <div className="building-image">
-                            <img src={greenElectric} alt=""/>
+                            <img src={aircraftPlant} alt=""/>
                         </div>
                         <div className="building-info">
                             <div className="building-upper-info">
-                                <span className="building-title">Air Power Plant [ 1 ]</span>
+                                <span className="building-title">Aircraft Plant [ 1 ]</span>
                                 <div className="building-build-time">
                                     <i className="far fa-clock" title="Time required"></i>
-                                    <span>07:30:00</span>
+                                    <span>01:30:00</span>
                                 </div>
                             </div>
                             <div className="building-bottom-info">
                                 <div className="building-ore-required">
-                                    <i className="fas fa-shopping-cart" title="Ore required"></i>
-                                    <span>25000</span>
+                                    <i className="icon-my-icons" title="Ore required"></i>
+                                    <span>10000</span>
                                 </div>
                                 <div className="building-area-required">
-                                    <span>65</span>
+                                    <span>35</span>
                                     <i className="fab fa-buromobelexperte" title="Area required"></i>
                                 </div>
                                 <div className="building-electronics-required">
@@ -217,78 +153,20 @@ export default class Home extends Component {
                     </article>
                     <article className="building">
                         <div className="building-image">
-                            <img src={hydroPower} alt=""/>
+                            <img src={bunkers} alt=""/>
                         </div>
                         <div className="building-info">
                             <div className="building-upper-info">
-                                <span className="building-title">Hydro Power Plant [ 1 ]</span>
+                                <span className="building-title">Bunkers [ 0 ]</span>
                                 <div className="building-build-time">
                                     <i className="far fa-clock" title="Time required"></i>
-                                    <span>00:16:00</span>
+                                    <span>00:25:00</span>
                                 </div>
                             </div>
                             <div className="building-bottom-info">
                                 <div className="building-ore-required">
-                                    <i className="fas fa-shopping-cart" title="Ore required"></i>
-                                    <span>56000</span>
-                                </div>
-                                <div className="building-area-required">
-                                    <span>75</span>
-                                    <i className="fab fa-buromobelexperte" title="Area required"></i>
-                                </div>
-                                <div className="building-electronics-required">
-                                    <span>0</span>
-                                    <i className="fas fa-microchip" title="Electronics required"></i>
-                                </div>
-                                <button className="building-build-btn">Build</button>
-                            </div>
-                        </div>
-                    </article>
-                    <article className="building">
-                        <div className="building-image">
-                            <img src={infrastructure} alt=""/>
-                        </div>
-                        <div className="building-info">
-                            <div className="building-upper-info">
-                                <span className="building-title">Infrastructure [ 1 ]</span>
-                                <div className="building-build-time">
-                                    <i className="far fa-clock" title="Time required"></i>
-                                    <span>02:15:00</span>
-                                </div>
-                            </div>
-                            <div className="building-bottom-info">
-                                <div className="building-ore-required">
-                                    <i className="fas fa-shopping-cart" title="Ore required"></i>
-                                    <span>2800</span>
-                                </div>
-                                <div className="building-area-required">
-                                    <span>25</span>
-                                    <i className="fab fa-buromobelexperte" title="Area required"></i>
-                                </div>
-                                <div className="building-electronics-required">
-                                    <span>0</span>
-                                    <i className="fas fa-microchip" title="Electronics required"></i>
-                                </div>
-                                <button className="building-build-btn">Build</button>
-                            </div>
-                        </div>
-                    </article>
-                    <article className="building">
-                        <div className="building-image">
-                            <img src={oreStorage} alt=""/>
-                        </div>
-                        <div className="building-info">
-                            <div className="building-upper-info">
-                                <span className="building-title">Ore Warehouse [ 1 ]</span>
-                                <div className="building-build-time">
-                                    <i className="far fa-clock" title="Time required"></i>
-                                    <span>00:27:00</span>
-                                </div>
-                            </div>
-                            <div className="building-bottom-info">
-                                <div className="building-ore-required">
-                                    <i className="fas fa-shopping-cart" title="Ore required"></i>
-                                    <span>2300</span>
+                                    <i className="icon-my-icons" title="Ore required"></i>
+                                    <span>10000</span>
                                 </div>
                                 <div className="building-area-required">
                                     <span>5</span>
@@ -304,23 +182,23 @@ export default class Home extends Component {
                     </article>
                     <article className="building">
                         <div className="building-image">
-                            <img src={oilStorage} alt=""/>
+                            <img src={minefield} alt=""/>
                         </div>
                         <div className="building-info">
                             <div className="building-upper-info">
-                                <span className="building-title">Oil Warehouse [ 1 ]</span>
+                                <span className="building-title">Minefield [ 0 ]</span>
                                 <div className="building-build-time">
                                     <i className="far fa-clock" title="Time required"></i>
-                                    <span> 00:32:00</span>
+                                    <span>00:30:00</span>
                                 </div>
                             </div>
                             <div className="building-bottom-info">
                                 <div className="building-ore-required">
-                                    <i className="fas fa-shopping-cart" title="Ore required"></i>
-                                    <span>3300</span>
+                                    <i className="icon-my-icons" title="Ore required"></i>
+                                    <span>10000</span>
                                 </div>
                                 <div className="building-area-required">
-                                    <span>8</span>
+                                    <span>25</span>
                                     <i className="fab fa-buromobelexperte" title="Area required"></i>
                                 </div>
                                 <div className="building-electronics-required">
