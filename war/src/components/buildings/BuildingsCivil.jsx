@@ -35,7 +35,7 @@ export default class BuildingsCivil extends Component {
                     <section className="buildings-type-list">
                         <Link to="/buildings/civil">Civil</Link>
                         <Link to="/buildings/military">Military</Link>
-                        <Link to="#">Hi - Tech</Link>
+                        <Link to="/buildings/hi-tech">Hi - Tech</Link>
                     </section>
                     <article className="building">
                         <div className="building-image">
