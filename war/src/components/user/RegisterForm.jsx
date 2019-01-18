@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import requester from "../../utils/requester";
 import notificator from "../../utils/notificator";
 import { Link } from 'react-router-dom';
+import gameService from "../../services/gameService";
 
 export default class RegisterForm extends Component {
     constructor(props) {
@@ -48,6 +49,8 @@ export default class RegisterForm extends Component {
             password: this.state.password,
             email: this.state.email
         };
+
+        data = gameService.initializeUserData(data);
 
         requester.post('user', '', 'basic', data)
             .then((res) => {
