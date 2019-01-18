@@ -6,14 +6,14 @@ import AsideLeft from "../common/AsideLeft";
 import AsideRight from "../common/AsideRight";
 
 //Images import
-import commandCenter from "../../images/buildings-mil/command-center.png";
-import barracks from "../../images/buildings-mil/barracks.jpg";
-import vehiclePlant from "../../images/buildings-mil/vehicle-plant.jpg";
-import aircraftPlant from "../../images/buildings-mil/aircraft-plant.jpg";
-import bunkers from "../../images/buildings-mil/bunkers.jpg";
+import laboratory from "../../images/buildings-hitech/Chemistry-1920x960.jpg";
+import electronicsPlant from "../../images/buildings-hitech/ElectronicsPlant.jpg";
+import electronicsStorage from "../../images/buildings-hitech/ElectronicsPlantStorage.jpg";
+import nuclearPlant from "../../images/buildings-hitech/NuclearPowerPlant.jpg";
+import rocketSilo from "../../images/buildings-hitech/Rocket-soli.jpg";
 import minefield from "../../images/buildings-mil/minefield.jpg";
 
-export default class BuildingsMilitary extends Component {
+export default class BuildingsHiTech extends Component {
     isLogged = () => {
         if (sessionStorage.getItem('username') && sessionStorage.getItem('authtoken')) {
             return true;
@@ -37,11 +37,11 @@ export default class BuildingsMilitary extends Component {
                     </section>
                     <article className="building">
                         <div className="building-image">
-                            <img src={commandCenter} alt=""/>
+                            <img src={laboratory} alt=""/>
                         </div>
                         <div className="building-info">
                             <div className="building-upper-info">
-                                <span className="building-title">Command center [ 1 ]</span>
+                                <span className="building-title">Laboratory [ 1 ]</span>
                                 <div className="building-build-time">
                                     <i className="far fa-clock" title="Time required"></i>
                                     <span>00:10:00</span>
@@ -66,11 +66,11 @@ export default class BuildingsMilitary extends Component {
                     </article>
                     <article className="building">
                         <div className="building-image">
-                            <img src={barracks} alt=""/>
+                            <img src={electronicsPlant} alt=""/>
                         </div>
                         <div className="building-info">
                             <div className="building-upper-info">
-                                <span className="building-title">Barracks [ 1 ]</span>
+                                <span className="building-title">Electronics Plant [ 1 ]</span>
                                 <div className="building-build-time">
                                     <i className="far fa-clock" title="Time required"></i>
                                     <span>00:05:30</span>
@@ -95,11 +95,11 @@ export default class BuildingsMilitary extends Component {
                     </article>
                     <article className="building">
                         <div className="building-image">
-                            <img src={vehiclePlant} alt=""/>
+                            <img src={electronicsStorage} alt=""/>
                         </div>
                         <div className="building-info">
                             <div className="building-upper-info">
-                                <span className="building-title">Vehicle plant [ 1 ]</span>
+                                <span className="building-title">Electronics Storage [ 1 ]</span>
                                 <div className="building-build-time">
                                     <i className="far fa-clock" title="Time required"></i>
                                     <span>00:07:00</span>
@@ -124,11 +124,11 @@ export default class BuildingsMilitary extends Component {
                     </article>
                     <article className="building">
                         <div className="building-image">
-                            <img src={aircraftPlant} alt=""/>
+                            <img src={nuclearPlant} alt=""/>
                         </div>
                         <div className="building-info">
                             <div className="building-upper-info">
-                                <span className="building-title">Aircraft Plant [ 1 ]</span>
+                                <span className="building-title">Nuclear Power Plant [ 1 ]</span>
                                 <div className="building-build-time">
                                     <i className="far fa-clock" title="Time required"></i>
                                     <span>01:30:00</span>
@@ -153,11 +153,11 @@ export default class BuildingsMilitary extends Component {
                     </article>
                     <article className="building">
                         <div className="building-image">
-                            <img src={bunkers} alt=""/>
+                            <img src={rocketSilo} alt=""/>
                         </div>
                         <div className="building-info">
                             <div className="building-upper-info">
-                                <span className="building-title">Bunkers [ 0 ]</span>
+                                <span className="building-title">Rocket Silo [ 0 ]</span>
                                 <div className="building-build-time">
                                     <i className="far fa-clock" title="Time required"></i>
                                     <span>00:25:00</span>
