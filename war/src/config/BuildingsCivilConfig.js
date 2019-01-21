@@ -11,9 +11,9 @@ function OreMinesConfig(buildingLevel, currentOreRequired) {
     buildingLevel = Number(buildingLevel);
 
     if (buildingLevel === 1) {
-        buildingData.ore = buildingData.ore * buildingLevel * 1.15;
+        buildingData.ore = buildingData.ore * 1.60;
     } else {
-        buildingData.ore = currentOreRequired * 1.15 * buildingLevel;
+        buildingData.ore = currentOreRequired * 1.60;
     }
 
     return buildingData;

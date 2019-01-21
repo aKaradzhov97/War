@@ -11,7 +11,6 @@ import electronicsPlant from "../../images/buildings-hitech/ElectronicsPlant.jpg
 import electronicsStorage from "../../images/buildings-hitech/ElectronicsPlantStorage.jpg";
 import nuclearPlant from "../../images/buildings-hitech/NuclearPowerPlant.jpg";
 import rocketSilo from "../../images/buildings-hitech/Rocket-soli.jpg";
-import minefield from "../../images/buildings-mil/minefield.jpg";
 
 export default class BuildingsHiTech extends Component {
     isLogged = () => {
@@ -170,35 +169,6 @@ export default class BuildingsHiTech extends Component {
                                 </div>
                                 <div className="building-area-required">
                                     <span>5</span>
-                                    <i className="fab fa-buromobelexperte" title="Area required"></i>
-                                </div>
-                                <div className="building-electronics-required">
-                                    <span>0</span>
-                                    <i className="fas fa-microchip" title="Electronics required"></i>
-                                </div>
-                                <button className="building-build-btn">Build</button>
-                            </div>
-                        </div>
-                    </article>
-                    <article className="building">
-                        <div className="building-image">
-                            <img src={minefield} alt=""/>
-                        </div>
-                        <div className="building-info">
-                            <div className="building-upper-info">
-                                <span className="building-title">Minefield [ 0 ]</span>
-                                <div className="building-build-time">
-                                    <i className="far fa-clock" title="Time required"></i>
-                                    <span>00:30:00</span>
-                                </div>
-                            </div>
-                            <div className="building-bottom-info">
-                                <div className="building-ore-required">
-                                    <i className="icon-my-icons" title="Ore required"></i>
-                                    <span>10000</span>
-                                </div>
-                                <div className="building-area-required">
-                                    <span>25</span>
                                     <i className="fab fa-buromobelexperte" title="Area required"></i>
                                 </div>
                                 <div className="building-electronics-required">

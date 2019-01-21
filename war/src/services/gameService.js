@@ -52,66 +52,35 @@ function initializeUserData(userData) {
     const buildingsCivil = {
         "oreMines": {
             "level": 1,
-            "ore": 300,
-            "area": 10,
-            "electronics": 0,
-            "buildTime": 180,
-            "production": 250
+            "name": "oreMine"
         },
         "oilFields": {
             "level": 1,
-            "ore": 300,
-            "area": 10,
-            "electronics": 0,
-            "buildTime": 180,
-            "production": 250
+            "name": "oilField"
         },
         "houses": {
             "level": 1,
-            "ore": 450,
-            "area": 10,
-            "electronics": 0,
-            "buildTime": 300,
-            "capacity": 25000
+            "name": "house"
         },
         "airPowerPlant": {
-            "level": 0,
-            "ore": 15000,
-            "area": 60,
-            "electronics": 0,
-            "buildTime": 15000,
-            "production": 800
+            "level": 1,
+            "name": "airPowerPlant"
         },
         "hydroPowerPlant": {
-            "level": 0,
-            "ore": 30000,
-            "area": 60,
-            "electronics": 0,
-            "buildTime": 27000,
-            "production": 800
+            "level": 1,
+            "name": "hydroPowerPlant"
         },
         "infrastructure": {
             "level": 1,
-            "ore": 10000,
-            "area": 30,
-            "electronics": 0,
-            "buildTime": 3600,
+            "name": "infrastructure"
         },
         "oreWarehouse": {
             "level": 1,
-            "ore": 300,
-            "area": 5,
-            "electronics": 0,
-            "buildTime": 180,
-            "capacity": 10000
+            "name": "oreWarehouse"
         },
         "oilWarehouse": {
             "level": 1,
-            "ore": 300,
-            "area": 5,
-            "electronics": 0,
-            "buildTime": 180,
-            "capacity": 10000
+            "name": "oilWarehouse"
         }
     };
 
@@ -122,6 +91,8 @@ function initializeUserData(userData) {
     userData.buildingsCivil = buildingsCivil;
     return userData;
 }
+
+
 
 export default {
     initializeUserData

@@ -4,7 +4,9 @@ import $ from "jquery";
 
 //Services
 import buildingsService from "../../services/buildingsService";
-import userService from "../../services/userService";
+
+//Configuration
+import BuildingsCivilConfig from "../../config/BuildingsCivilConfig";
 
 //Components import
 import AsideLeft from "../common/AsideLeft";
@@ -40,7 +42,7 @@ export default class BuildingsCivil extends Component {
         this.getBuildings();
 
         $("#btn-ore-mines").on("click", () => {
-            this.levelUpBuilding(this.state.oreMines.lvl, this.state.oreMines.buildTime, this.state.oreMines.name);
+            this.levelUpBuilding(this.state.oreMines.level, this.state.oreMines.buildTime);
         });
     };
 
@@ -58,25 +60,17 @@ export default class BuildingsCivil extends Component {
     getBuildings = () => {
         buildingsService.getUserBuildings(sessionStorage.getItem("userId"))
             .then((res) => {
-                let userRes = res;
-
-                buildingsService.getBuildingsData("buildingsCivil")
-                    .then((res) => {
-
-                        let oreMineData = res.filter(x => x.name === userRes.buildingsCivil.oreMines.name).filter(y => y.lvl == userRes.buildingsCivil.oreMines.level)[0];
-                        this.setState({
-                            oreMines: oreMineData
-                        });
-
-                        $("#timer-ore-mines").empty();
-                        $("#timer-ore-mines").append(this.parseTimeFromSeconds(this.state.oreMines.buildTime));
-                    });
+                this.setState({
+                    oreMines: BuildingsCivilConfig.OreMinesConfig(res.buildingsCivil.oreMines.level, res.buildingsCivil.oreMines.ore)
+                });
+                $("#timer-ore-mines").empty();
+                $("#timer-ore-mines").append(this.parseTimeFromSeconds(this.state.oreMines.buildTime));
             }).catch((err) => {
 
         });
     };
 
-    levelUpBuilding = (currentLvl, seconds, buildingName) => {
+    levelUpBuilding = (currentLvl, seconds) => {
         let now = Date.now();
         let countDownDate = (now + (seconds * 1000)) + "";
 
@@ -106,20 +100,12 @@ export default class BuildingsCivil extends Component {
             timer.append(hours + ":" + minutes + ":" + seconds);
 
             if (diff < 1000) {
-                clearInterval(update);
-                buildingsService.getUserBuildings(sessionStorage.getItem("userId"))
-                    .then((res) => {
-                        let userRes = res;
-                        currentLvl = Number(currentLvl);
-                        currentLvl = currentLvl + 1;
-                        userRes.buildingsCivil.oreMines.level = currentLvl;
-                        userService.updateUserData(userRes)
-                            .then((res) => {
 
-                            });
-                    }).catch((err) => {
-
+                this.setState({
+                    oreMines: BuildingsCivilConfig.OreMinesConfig(this.state.oreMines.level + 1, this.state.oreMines.ore),
                 });
+
+                clearInterval(update);
             }
         }, 1000);
     };
@@ -161,7 +147,7 @@ export default class BuildingsCivil extends Component {
                         </div>
                         <div className="building-info">
                             <div className="building-upper-info">
-                                <span className="building-title">Ore mines [ {this.state.oreMines.lvl} ]</span>
+                                <span className="building-title">Ore mines [ {this.state.oreMines.level} ]</span>
                                 <div className="building-build-time">
                                     <i className="far fa-clock" title="Time required"></i>
                                     <span id="timer-ore-mines">00:00:00</span>
