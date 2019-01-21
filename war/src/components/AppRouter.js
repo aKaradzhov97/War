@@ -6,16 +6,19 @@ import { Route, Switch } from 'react-router-dom';
 //REMEMBER: DEFAULT ROUTE/COMPONENT HAS TO BE LAST ADDED!
 
 //Add all components without header, footer etc..
+import TechnologiesCivil from "./technologies/TechnologiesCivil";
+import BuildingsHiTech from "./buildings/BuildingsHiTech";
 import BuildingsMilitary from './buildings/BuildingsMilitary'
 import BuildingsCivil from './buildings/BuildingsCivil';
 import Register from './user/RegisterForm';
 import Login from './user/LoginForm';
 import Logout from "./user/Logout";
-import BuildingsHiTech from "./buildings/BuildingsHiTech";
+
 
 //Route with no path - used for not found pages.
 const AppRouter = () => (
     <Switch>
+        <Route path="/technologies/civil" component={TechnologiesCivil}/>
         <Route path="/buildings/hi-tech" component={BuildingsHiTech}/>
         <Route path="/buildings/military" component={BuildingsMilitary}/>
         <Route path="/buildings/civil" component={BuildingsCivil}/>

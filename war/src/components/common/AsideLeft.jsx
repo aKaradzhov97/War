@@ -11,7 +11,7 @@ export default class AsideLeft extends Component {
                             <Link to="/buildings/civil">Buildings</Link>
                         </li>
                         <li>
-                            <Link to="#">Technologies</Link>
+                            <Link to="/technologies/civil">Technologies</Link>
                         </li>
                         <li>
                             <Link to="#">Hire</Link>

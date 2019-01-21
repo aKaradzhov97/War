@@ -9,6 +9,7 @@
 @import "side-navs.css";
 @import "authenticate.css";
 @import "main.css";
+@import "technologies.css";
 
 body {
     display: flex;
