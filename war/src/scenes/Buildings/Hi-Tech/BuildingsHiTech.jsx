@@ -2,15 +2,18 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 //Components import
-import AsideLeft from "../common/AsideLeft";
-import AsideRight from "../common/AsideRight";
+import AsideLeft from "../../../components/Sidebars/AsideLeft";
+import AsideRight from "../../../components/Sidebars/AsideRight";
+
+//Styles import
+import "../styles/buildings.css";
 
 //Images import
-import laboratory from "../../images/buildings-hitech/Chemistry-1920x960.jpg";
-import electronicsPlant from "../../images/buildings-hitech/ElectronicsPlant.jpg";
-import electronicsStorage from "../../images/buildings-hitech/ElectronicsPlantStorage.jpg";
-import nuclearPlant from "../../images/buildings-hitech/NuclearPowerPlant.jpg";
-import rocketSilo from "../../images/buildings-hitech/Rocket-soli.jpg";
+import laboratory from "./images/Chemistry-1920x960.jpg";
+import electronicsPlant from "./images/ElectronicsPlant.jpg";
+import electronicsStorage from "./images/ElectronicsPlantStorage.jpg";
+import nuclearPlant from "./images/NuclearPowerPlant.jpg";
+import rocketSilo from "./images/Rocket-soli.jpg";
 
 export default class BuildingsHiTech extends Component {
     isLogged = () => {
@@ -42,22 +45,22 @@ export default class BuildingsHiTech extends Component {
                             <div className="building-upper-info">
                                 <span className="building-title">Laboratory [ 1 ]</span>
                                 <div className="building-build-time">
-                                    <i className="far fa-clock" title="Time required"></i>
+                                    <i className="far fa-clock" title="Time required" />
                                     <span>00:10:00</span>
                                 </div>
                             </div>
                             <div className="building-bottom-info">
                                 <div className="building-ore-required">
-                                    <i className="icon-my-icons" title="Ore required"></i>
+                                    <i className="icon-my-icons" title="Ore required" />
                                     <span>1500</span>
                                 </div>
                                 <div className="building-area-required">
                                     <span>15</span>
-                                    <i className="fab fa-buromobelexperte" title="Area required"></i>
+                                    <i className="fab fa-buromobelexperte" title="Area required" />
                                 </div>
                                 <div className="building-electronics-required">
                                     <span>0</span>
-                                    <i className="fas fa-microchip" title="Electronics required"></i>
+                                    <i className="fas fa-microchip" title="Electronics required" />
                                 </div>
                                 <button className="building-build-btn">Build</button>
                             </div>
@@ -71,22 +74,22 @@ export default class BuildingsHiTech extends Component {
                             <div className="building-upper-info">
                                 <span className="building-title">Electronics Plant [ 1 ]</span>
                                 <div className="building-build-time">
-                                    <i className="far fa-clock" title="Time required"></i>
+                                    <i className="far fa-clock" title="Time required" />
                                     <span>00:05:30</span>
                                 </div>
                             </div>
                             <div className="building-bottom-info">
                                 <div className="building-ore-required">
-                                    <i className="icon-my-icons" title="Ore required"></i>
+                                    <i className="icon-my-icons" title="Ore required" />
                                     <span>1000</span>
                                 </div>
                                 <div className="building-area-required">
                                     <span>15</span>
-                                    <i className="fab fa-buromobelexperte" title="Area required"></i>
+                                    <i className="fab fa-buromobelexperte" title="Area required" />
                                 </div>
                                 <div className="building-electronics-required">
                                     <span>0</span>
-                                    <i className="fas fa-microchip" title="Electronics required"></i>
+                                    <i className="fas fa-microchip" title="Electronics required" />
                                 </div>
                                 <button className="building-build-btn">Build</button>
                             </div>
@@ -100,22 +103,22 @@ export default class BuildingsHiTech extends Component {
                             <div className="building-upper-info">
                                 <span className="building-title">Electronics Storage [ 1 ]</span>
                                 <div className="building-build-time">
-                                    <i className="far fa-clock" title="Time required"></i>
+                                    <i className="far fa-clock" title="Time required" />
                                     <span>00:07:00</span>
                                 </div>
                             </div>
                             <div className="building-bottom-info">
                                 <div className="building-ore-required">
-                                    <i className="icon-my-icons" title="Ore required"></i>
+                                    <i className="icon-my-icons" title="Ore required" />
                                     <span>5000</span>
                                 </div>
                                 <div className="building-area-required">
                                     <span>10</span>
-                                    <i className="fab fa-buromobelexperte" title="Area required"></i>
+                                    <i className="fab fa-buromobelexperte" title="Area required" />
                                 </div>
                                 <div className="building-electronics-required">
                                     <span>0</span>
-                                    <i className="fas fa-microchip" title="Electronics required"></i>
+                                    <i className="fas fa-microchip" title="Electronics required" />
                                 </div>
                                 <button className="building-build-btn">Build</button>
                             </div>
@@ -129,22 +132,22 @@ export default class BuildingsHiTech extends Component {
                             <div className="building-upper-info">
                                 <span className="building-title">Nuclear Power Plant [ 1 ]</span>
                                 <div className="building-build-time">
-                                    <i className="far fa-clock" title="Time required"></i>
+                                    <i className="far fa-clock" title="Time required" />
                                     <span>01:30:00</span>
                                 </div>
                             </div>
                             <div className="building-bottom-info">
                                 <div className="building-ore-required">
-                                    <i className="icon-my-icons" title="Ore required"></i>
+                                    <i className="icon-my-icons" title="Ore required" />
                                     <span>10000</span>
                                 </div>
                                 <div className="building-area-required">
                                     <span>35</span>
-                                    <i className="fab fa-buromobelexperte" title="Area required"></i>
+                                    <i className="fab fa-buromobelexperte" title="Area required" />
                                 </div>
                                 <div className="building-electronics-required">
                                     <span>0</span>
-                                    <i className="fas fa-microchip" title="Electronics required"></i>
+                                    <i className="fas fa-microchip" title="Electronics required" />
                                 </div>
                                 <button className="building-build-btn">Build</button>
                             </div>
@@ -158,22 +161,22 @@ export default class BuildingsHiTech extends Component {
                             <div className="building-upper-info">
                                 <span className="building-title">Rocket Silo [ 0 ]</span>
                                 <div className="building-build-time">
-                                    <i className="far fa-clock" title="Time required"></i>
+                                    <i className="far fa-clock" title="Time required" />
                                     <span>00:25:00</span>
                                 </div>
                             </div>
                             <div className="building-bottom-info">
                                 <div className="building-ore-required">
-                                    <i className="icon-my-icons" title="Ore required"></i>
+                                    <i className="icon-my-icons" title="Ore required" />
                                     <span>10000</span>
                                 </div>
                                 <div className="building-area-required">
                                     <span>5</span>
-                                    <i className="fab fa-buromobelexperte" title="Area required"></i>
+                                    <i className="fab fa-buromobelexperte" title="Area required" />
                                 </div>
                                 <div className="building-electronics-required">
                                     <span>0</span>
-                                    <i className="fas fa-microchip" title="Electronics required"></i>
+                                    <i className="fas fa-microchip" title="Electronics required" />
                                 </div>
                                 <button className="building-build-btn">Build</button>
                             </div>

@@ -2,16 +2,19 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 //Components import
-import AsideLeft from "../common/AsideLeft";
-import AsideRight from "../common/AsideRight";
+import AsideLeft from "../../../components/Sidebars/AsideLeft";
+import AsideRight from "../../../components/Sidebars/AsideRight";
+
+//Styles import
+import "../styles/buildings.css";
 
 //Images import
-import commandCenter from "../../images/buildings-mil/command-center.png";
-import barracks from "../../images/buildings-mil/barracks.jpg";
-import vehiclePlant from "../../images/buildings-mil/vehicle-plant.jpg";
-import aircraftPlant from "../../images/buildings-mil/aircraft-plant.jpg";
-import bunkers from "../../images/buildings-mil/bunkers.jpg";
-import minefield from "../../images/buildings-mil/minefield.jpg";
+import commandCenter from "./images/command-center.png";
+import barracks from "./images/barracks.jpg";
+import vehiclePlant from "./images/vehicle-plant.jpg";
+import aircraftPlant from "./images/aircraft-plant.jpg";
+import bunkers from "./images/bunkers.jpg";
+import minefield from "./images/minefield.jpg";
 
 export default class BuildingsMilitary extends Component {
     isLogged = () => {

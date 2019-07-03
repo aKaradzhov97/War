@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+//Styles import
+import './styles/sidebars.css';
+
 export default class AsideLeft extends Component {
     render = () => {
         return (
@@ -14,7 +17,7 @@ export default class AsideLeft extends Component {
                             <Link to="/technologies/civil">Technologies</Link>
                         </li>
                         <li>
-                            <Link to="#">Hire</Link>
+                            <Link to="/hire">Hire</Link>
                         </li>
                         <li>
                             <Link to="#">Units</Link>

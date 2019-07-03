@@ -4,24 +4,11 @@
 @import "reset.css";
 @import "typography.css";
 @import "fonts.css";
-@import "header.css";
-@import "footer.css";
-@import "side-navs.css";
 @import "authenticate.css";
-@import "main.css";
 @import "technologies.css";
 
 body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-    background-image: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(0,0,0,0.6) 0%, rgba(0,0,0,1) 100%), url("../images/bg.jpg");
+    background-image: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(0,0,0,0.6) 0%, rgba(0,0,0,1) 100%), url("../images/bg_dark.jpg");
     background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-repeat: repeat;
 }
-
-main {
-    flex: 1;
-}
-

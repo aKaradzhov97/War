@@ -3,22 +3,25 @@ import { Link } from 'react-router-dom';
 import $ from "jquery";
 
 //Services
-import buildingsService from "../../services/buildingsService";
-import userService from "../../services/userService";
+import buildingsService from "../../../services/buildingsService";
+import userService from "../../../services/userService";
 
 //Components import
-import AsideLeft from "../common/AsideLeft";
-import AsideRight from "../common/AsideRight";
+import AsideLeft from "../../../components/Sidebars/AsideLeft";
+import AsideRight from "../../../components/Sidebars/AsideRight";
+
+//Styles import
+import "../styles/buildings.css";
 
 //Images import
-import oreMineImg from "../../images/buildings-civil/ore-mine.png";
-import oilImg from "../../images/buildings-civil/oil.jpg"
-import house from "../../images/buildings-civil/houses.jpg"
-import greenElectric from "../../images/buildings-civil/green-el.jpg"
-import hydroPower from "../../images/buildings-civil/water-plant.jpg"
-import infrastructure from "../../images/buildings-civil/infra.jpg"
-import oreStorage from "../../images/buildings-civil/ore-strorage.jpg"
-import oilStorage from "../../images/buildings-civil/Oil-storage.jpg"
+import oreMineImg from "./images/ore-mine.png";
+import oilImg from "./images/oil.jpg"
+import house from "./images/houses.jpg"
+import greenElectric from "./images/green-el.jpg"
+import hydroPower from "./images/water-plant.jpg"
+import infrastructure from "./images/infra.jpg"
+import oreStorage from "./images/ore-strorage.jpg"
+import oilStorage from "./images/Oil-storage.jpg"
 
 export default class BuildingsCivil extends Component {
     constructor(props) {

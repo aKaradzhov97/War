@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 //import { Link } from 'react-router-dom';
 
+//Styles import
+import './styles/header.css';
+
 export default class Header extends Component {
     isAdmin = () => {
         if (sessionStorage.getItem('roleId') && sessionStorage.getItem('username') && sessionStorage.getItem('authtoken')) {
@@ -19,7 +22,7 @@ export default class Header extends Component {
     render = () => {
         return (
             <header>
-                <p className="title">W<i className="fas fa-fighter-jet"></i>R</p>
+                <p className="title">WAR</p>
                 <p className="desc">Everything starts here...</p>
             </header>
         )

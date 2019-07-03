@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 //Components import
-import AsideLeft from "../common/AsideLeft";
-import AsideRight from "../common/AsideRight";
+import AsideLeft from "../../../components/Sidebars/AsideLeft";
+import AsideRight from "../../../components/Sidebars/AsideRight";
 
 //Images import
-import education from "../../images/technologies-civil/education-copy-1.jpg";
-import medicine from "../../images/technologies-civil/bigstock-Medicine-Pills-52148695.jpg";
-import geology from "../../images/technologies-civil/geology.JPG";
-import architecture from "../../images/technologies-civil/architecture.jpeg";
-import urbanPlaning from "../../images/technologies-civil/urbanPlaning.jpg";
+import education from "./images/education-copy-1.jpg";
+import medicine from "./images/bigstock-Medicine-Pills-52148695.jpg";
+import geology from "./images/geology.JPG";
+import architecture from "./images/architecture.jpeg";
+import urbanPlaning from "./images/urbanPlaning.jpg";
 
 export default class TechnologiesCivil extends Component {
     constructor(props) {
@@ -64,8 +64,8 @@ export default class TechnologiesCivil extends Component {
                 <section className="buildings">
                     <section className="buildings-type-list">
                         <Link to="/technologies/civil">Civil</Link>
-                        <Link to="#">Military</Link>
-                        <Link to="#">Hi - Tech</Link>
+                        <Link to="/technologies/military">Military</Link>
+                        <Link to="/technologies/hi-tech">Hi - Tech</Link>
                     </section>
                     <article className="technologies">
                         <div className="technologies-image">
@@ -75,13 +75,13 @@ export default class TechnologiesCivil extends Component {
                             <div className="technologies-upper-info">
                                 <span className="technologies-title">Education [ 0 ]</span>
                                 <div className="technologies-train-time">
-                                    <i className="far fa-clock" title="Time required"></i>
+                                    <i className="far fa-clock" title="Time required" />
                                     <span>00:25:00</span>
                                 </div>
                             </div>
                             <div className="technologies-bottom-info">
                                 <div className="technologies-ore-required">
-                                    <i className="fas fa-flask" title="Ore required"></i>
+                                    <i className="fas fa-flask" title="Ore required" />
                                     <span>200</span>
                                 </div>
                                 <button className="technologies-build-btn">Train</button>
@@ -96,13 +96,13 @@ export default class TechnologiesCivil extends Component {
                             <div className="technologies-upper-info">
                                 <span className="technologies-title">Medicine [ 0 ]</span>
                                 <div className="technologies-train-time">
-                                    <i className="far fa-clock" title="Time required"></i>
+                                    <i className="far fa-clock" title="Time required" />
                                     <span>00:25:00</span>
                                 </div>
                             </div>
                             <div className="technologies-bottom-info">
                                 <div className="technologies-ore-required">
-                                    <i className="fas fa-flask" title="Ore required"></i>
+                                    <i className="fas fa-flask" title="Ore required" />
                                     <span>200</span>
                                 </div>
                                 <button className="technologies-build-btn">Train</button>
@@ -117,13 +117,13 @@ export default class TechnologiesCivil extends Component {
                             <div className="technologies-upper-info">
                                 <span className="technologies-title">Geology [ 0 ]</span>
                                 <div className="technologies-train-time">
-                                    <i className="far fa-clock" title="Time required"></i>
+                                    <i className="far fa-clock" title="Time required" />
                                     <span>00:40:00</span>
                                 </div>
                             </div>
                             <div className="technologies-bottom-info">
                                 <div className="technologies-ore-required">
-                                    <i className="fas fa-flask" title="Ore required"></i>
+                                    <i className="fas fa-flask" title="Ore required" />
                                     <span>250</span>
                                 </div>
                                 <button className="technologies-build-btn">Train</button>
@@ -138,13 +138,13 @@ export default class TechnologiesCivil extends Component {
                             <div className="technologies-upper-info">
                                 <span className="technologies-title">Architecture [ 0 ]</span>
                                 <div className="technologies-train-time">
-                                    <i className="far fa-clock" title="Time required"></i>
+                                    <i className="far fa-clock" title="Time required" />
                                     <span>01:00:00</span>
                                 </div>
                             </div>
                             <div className="technologies-bottom-info">
                                 <div className="technologies-ore-required">
-                                    <i className="fas fa-flask" title="Ore required"></i>
+                                    <i className="fas fa-flask" title="Ore required" />
                                     <span>250</span>
                                 </div>
                                 <button className="technologies-build-btn">Train</button>
@@ -159,13 +159,13 @@ export default class TechnologiesCivil extends Component {
                             <div className="technologies-upper-info">
                                 <span className="technologies-title">Urban Planing [ 0 ]</span>
                                 <div className="technologies-train-time">
-                                    <i className="far fa-clock" title="Time required"></i>
+                                    <i className="far fa-clock" title="Time required" />
                                     <span>01:25:00</span>
                                 </div>
                             </div>
                             <div className="technologies-bottom-info">
                                 <div className="technologies-ore-required">
-                                    <i className="fas fa-flask" title="Ore required"></i>
+                                    <i className="fas fa-flask" title="Ore required" />
                                     <span>450</span>
                                 </div>
                                 <button className="technologies-build-btn">Train</button>

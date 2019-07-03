@@ -1,4 +1,3 @@
-import $ from "jquery";
 import requester from "../utils/requester";
 
 function getUserBuildings(userId) {

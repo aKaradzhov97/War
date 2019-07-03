@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans:400,400i,700,700i');
 
 html {
-    font: 12px/1.5 "Montserrat", sans-serif;
+    font: 10px/1.5 "Montserrat", sans-serif;
 }
 
 body, form, table {
@@ -86,24 +86,24 @@ hr {
 
 @media screen and (min-width: 500px){
     html {
-        font-size: 14px;
+        font-size: 12px;
     }
 }
 
 @media screen and (min-width: 800px){
     html {
-        font-size: 16px;
+        font-size: 14px;
     }
 }
 
 @media screen and (min-width: 1300px){
     html {
-        font-size: 18px;
+        font-size: 16px;
     }
 }
 
 @media screen and (min-width: 1800px){
     html {
-        font-size: 21px;
+        font-size: 18px;
     }
 }
